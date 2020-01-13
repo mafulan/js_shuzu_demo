@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 生成一注随机彩票，从1-35里随机选7个不同的数字
+    // var arr = [1,2,3,5,6];
+    // console.log(arr.indexOf(30));
+    //方法1：
+    // var arr = [];
+    // for(var i=0;i<7;i++){
+    //     var iRandom = Math.round(Math.random()*(35-1)+1);
+    //     arr.indexOf(iRandom)==-1 ? arr.push(iRandom) : i--;
+    // }
+    // console.log(arr);
+    //方法2：
+    // var arrAll = [];
+    // for(var i=1;i<=35;i++){
+    //     arrAll.push(i);
+    // }
+    // var arr = [];
+    // for(var i=0;i<7;i++){
+    //     arr.push(arrAll.splice(Math.round(Math.random()*(arrAll.length-1)),1)[0]);
+    // }
+    // console.log(arr);
+    //方法3：
+    var arr = [];
+    for(var i=1;i<=35;i++){
+        arr.push(i);
+    }
+    arr.sort(function (a,b){
+        return Math.random()-0.5;
+    })
+    arr.length = 7;
+    console.log(arr);
+    </script>
+</body>
+</html>

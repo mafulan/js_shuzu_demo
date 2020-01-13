@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       //方法一：先从小到大排序，再循环去掉重复值
+      
+        // var arr =[1,2,2,2,2,3,3,4,4,4,2,3] ;
+        // arr.sort(function(a,b){
+        //        return a-b;
+        // })
+        // var arr1=[];
+        // for(var i=0;i<arr.length;i++){
+        //     if(arr[i]!=arr[i+1])
+        //     arr1.push(arr[i]);
+
+        // }
+        // console.log(arr1);
+
+        
+        //方法二：用indexOf判断当前元素在数组中的位置与循环下标相等，则添加到新数组中 
+    //     var arr =[1,2,2,2,2,3,3,4,4,4,2,3];
+    //     var arr1=[];
+    //     for(var i=0;i<arr.length;i++){
+    //         if(arr.indexOf(arr[i])==i){
+    //             arr1.push(arr[i]);
+    //         }
+    //    }
+    //    console.log(arr1);
+
+       //方法三splice
+       var arr =[1,2,2,2,2,3,3,4,4,4,2,3];
+       for(var i=0;i<arr.length-1;i++){
+           for(var j=i+1;j<arr.length;j++){
+              if(arr[i]==arr[j]){
+                  arr.splice(j,1);
+                  j--;
+              }
+           }
+}
+              console.log(arr);
+
+
+   </script>
+</body>
+</html>
